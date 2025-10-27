@@ -45,6 +45,11 @@ This section highlights major observations and trends, such as which products an
 
 ### Sales Trends
 The trend analysis visuals show sales distribution across different months and times of day, helping stakeholders identify peak revenue periods. The combination of bar charts and heat maps allows for a deeper understanding of customer behaviour and store efficiency patterns.
+
+![image alt](https://github.com/gouravjain77/Infographic_Dashboard/blob/d29c5c1c41087d5880c6eea048ceece1aa25eb0d/3.png)
+
 ### Forecast
 This section projects future sales performance using Power BI’s forecasting capabilities. It enables the business to anticipate year-end results and plan marketing or operational strategies accordingly.
+
+![image alt](https://github.com/gouravjain77/Infographic_Dashboard/blob/d29c5c1c41087d5880c6eea048ceece1aa25eb0d/4.png)
 
