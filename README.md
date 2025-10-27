@@ -53,3 +53,25 @@ This section projects future sales performance using Power BI’s forecasting ca
 
 ![image alt](https://github.com/gouravjain77/Infographic_Dashboard/blob/d29c5c1c41087d5880c6eea048ceece1aa25eb0d/4.png)
 
+## Measures Created
+### Core Measures
+- Average Order Size = AVERAGE(Kraken_Koffee_Fact[Total Sales])
+- Most Popular Seller = 
+CALCULATE(
+    MIN(Product_Dim[product_detail]),
+    FILTER(Product_Dim,[Product Transactions Ranking]=1)
+)
+- Product Sales Ranking = 
+RANKX(ALLSELECTED(Product_Dim),[Total Sales],,DESC,Dense)
+- Product Transactions Ranking = 
+RANKX(ALLSELECTED(Product_Dim),[Total Transactions],,DESC,Dense)
+- Top Earner = 
+CALCULATE(
+    MIN(Product_Dim[product_detail]),
+    FILTER(Product_Dim,[Product Sales Ranking]=1)
+)
+- Total Products = COUNT(Product_Dim[product_id])
+- Total Sales = 
+SUM(Kraken_Koffee_Fact[Total Sales])
+- Total Stores = DISTINCTCOUNT(Store_Dim[store_id])
+- Total Transactions = COUNT(Kraken_Koffee_Fact[transaction_id])
