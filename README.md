@@ -35,7 +35,9 @@ The background and thematic layout of this dashboard were created in PowerPoint 
 ## Sections Of Dashboard
 ### Overview
 The header section introduces the Kraken Koffee 2023 Half-Time Review Dashboard, summarising the report's purpose: to evaluate mid-year sales performance across the brand’s Florida locations. It presents key metrics, such as total sales, transactions, average order value, and store count, providing viewers with an instant snapshot of business performance.
-![image alt](https://github.com/gouravjain77/Infographic_Dashboard/blob/main/full.png?raw=true))
+
+[![image alt](https://github.com/gouravjain77/Infographic_Dashboard/blob/c2284a045cc07d50d38952535fed18a500ab2987/1.png)
+
 ### Key Insights
 This section highlights major observations and trends, such as which products and store locations are driving revenue growth. It provides quick, actionable insights supported by visuals like bar charts and KPI cards, allowing decision-makers to identify top-performing products and understand regional performance differences.
 ### Sales Trends
