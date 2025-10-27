@@ -75,3 +75,34 @@ CALCULATE(
 SUM(Kraken_Koffee_Fact[Total Sales])
 - Total Stores = DISTINCTCOUNT(Store_Dim[store_id])
 - Total Transactions = COUNT(Kraken_Koffee_Fact[transaction_id])
+### Nested Measures
+- Total Transactions = COUNT(Kraken_Koffee_Fact[transaction_id])
+- Max AOS Marker = 
+SWITCH(TRUE(),
+    [Average Order Size]=[Max Avg Order Size (Hour)],[Average Order Size],
+    BLANK())
+- Max Avg Order Size (Hour) = 
+MAXX(ALLSELECTED(Kraken_Koffee_Fact[Hour]),[Average Order Size])
+- Product Category Rank = CALCULATE(RANKX(ALL('Product_Dim'[product_type]),[Total Sales],,DESC,Dense),ALL(Product_Dim[product_category]))
+### Formatting And Text
+- Bar Chart Label(Product Category) = 
+FORMAT([Total Sales]/1000,"$###,##0K") & " (" & FORMAT([% Of Sales],"###,##0.0%") & ")"
+- MAX AOS Marker Label = 
+"Max Order Size: " & FORMAT([Max AOS Marker],"$###,##0.00")
+- Top 10 Product Type Highlight = 
+IF([Product Category Rank] <= 10, "#EFB251", "#00958C")
+
+## Benefits
+
+- Quick Insights: The infographic layout allows stakeholders to grasp key business metrics at a glance without navigating multiple pages.
+
+- Enhanced Storytelling: Combines visuals, narratives, and data in a single view, making performance insights more engaging and easier to communicate.
+
+- Data-Driven Decisions: Provides clear visibility into product performance, store trends, and forecasted outcomes, enabling more strategic planning.
+
+- Interactive Exploration: Users can interact with visuals to drill down into specific stores, time frames, or products for deeper insights.
+
+- Visually Appealing Design: The PowerPoint-designed background adds aesthetic value, improving stakeholder engagement and presentation quality.
+
+## Conclusion
+The Kraken Koffee 2023 Half-Time Review Dashboard serves as a perfect example of how data visualisation and design can work together to simplify complex information. By integrating Power BI’s analytical power with infographic-style storytelling, this dashboard not only delivers valuable business insights but also enhances user experience. It stands as a visually compelling and decision-support tool that bridges the gap between data analysis and executive storytelling.
